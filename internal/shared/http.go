@@ -228,15 +228,15 @@ func extractRequestScheme(r *http.Request) string {
 }
 
 func extractRequestHost(r *http.Request) string {
-    if host := r.Header.Get("X-Forwarded-Host"); host != "" {
-        return host
-    }
+	if host := r.Header.Get("X-Forwarded-Host"); host != "" {
+		return host
+	}
 
-    if host := r.Header.Get("X-Host"); host != "" {
-        return host
-    }
+	if host := r.Header.Get("X-Host"); host != "" {
+		return host
+	}
 
-    return r.Host
+	return r.Host
 }
 
 func GetReversedHostname(r *http.Request) string {
